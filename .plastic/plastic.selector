@@ -1,0 +1,4 @@
+repository "Trippy_team@dfurda18@cloud"
+  path "/"
+    br "/main"
+    co "/main"
