@@ -4,7 +4,7 @@ using UnityEngine;
 using static UnityEditor.FilePathAttribute;
 using UnityEngine.UIElements;
 
-public class Building : SpawnPoint
+public class Decoration : SpawnPoint
 {
     public override void OnCollission()
     {
