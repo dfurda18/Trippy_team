@@ -99,7 +99,7 @@ public class PlayerMove : MonoBehaviour
      */
     public void Jump()
     {
-        if (this.isGrounded)
+        if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && this.isGrounded)
         {
             this.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.up * this.jumpSpeed);
             this.GetComponentInChildren<Animator>().SetTrigger("isJumping");

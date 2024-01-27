@@ -44,7 +44,7 @@ public class ColisionDetectionTest : MonoBehaviour
                 collision.collider.GetComponentInChildren<Animator>().SetTrigger("CollisionTrigger");
                 Debug.Log("Colision fall triggered");
 
-                Invoke("ResetPlayerMoveSpeedToDefault", 2.9f);
+                Invoke("ResetPlayerMoveSpeedToDefault", 2.6f);
 
             }//end if else 
         }//end outer if 
