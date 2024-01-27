@@ -3,7 +3,8 @@ guid: e879516077598ee4d8961845ba963e00
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - FastRunAnimationSettings: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
