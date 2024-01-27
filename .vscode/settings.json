@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Trippy_team.sln"
+    "dotnet.defaultSolution": "Trippy_team.sln",
+    "dotnet.preferCSharpExtension": true
 }

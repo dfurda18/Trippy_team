@@ -33,7 +33,9 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!this.stopped && this.GetComponent<Rigidbody>().velocity.magnitude < this.maxSpeed)
+        //this.GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0)
+        //this.GetComponentInChildren<Animator>().GetAnimator
+        if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && this.GetComponent<Rigidbody>().velocity.magnitude < this.maxSpeed)
         {
             this.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.forward * this.acceleration);
         }
@@ -104,13 +106,19 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    /**
+     * Manual Stop Player
+     */
     public void StopPlayer()
     {
-        this.stopped = true;
+        this.GetComponentInChildren<Animator>().SetBool("isRunning", false);
     }
 
+    /**
+     * Manual Start Player movement
+     */
     public void ContinueRunning()
     {
-        this.stopped = false;
+        this.GetComponentInChildren<Animator>().SetBool("isRunning", true);
     }
 }
