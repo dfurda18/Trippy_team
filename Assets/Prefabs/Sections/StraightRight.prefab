@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
-  type: 0
+  type: 5
   direction: 0
 --- !u!1 &4524014255480738529
 GameObject:
