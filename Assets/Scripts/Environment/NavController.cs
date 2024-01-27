@@ -36,4 +36,9 @@ public class NavController : MonoBehaviour
     {
         NavController.instance.playerMove.Turn(direction);
     }
+
+    public static GameObject GetPlayer()
+    {
+        return NavController.instance.player;
+    }
 }

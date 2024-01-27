@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class ColisionDetectionTest : MonoBehaviour
 {
     [SerializeField] private string colisionTag = "Player";
-    Rigidbody rb;
     
     /* 
      * Animation Trigger Variables
@@ -14,8 +13,14 @@ public class ColisionDetectionTest : MonoBehaviour
     [SerializeField] private UnityEvent FastRunAnimationTrigger;
 
     //Access the playermove script to stop the default movement speed 
-    //public PlayerMove jr_pm_instance;
+    
+    
+    
+
+    //save the speed 
     private float jr_pm_Default_Speed;
+
+    //stop the players movements 
     private float jr_Fall_Stop_Speed = 0f;
 
 
@@ -23,9 +28,13 @@ public class ColisionDetectionTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //jr_pm_instance = GetComponent<PlayerMove>();
-        jr_pm_Default_Speed = PlayerMove.speed;
-        rb = GetComponent<Rigidbody>();
+        //jr_PlayerMove = jr_navCon_instance.player.GetComponent<PlayerMove>();
+        jr_PlayerMove = jr_navCon_instance.playerMove;
+        //jr_pm_Default_Speed = jr_PlayerMove.speed;
+        //Debug.Log(jr_PlayerMove.speed.ToString());
+
+
+        jr_pm_Default_Speed =NavController.GetPlayer().GetComponent<PlayerMove>().speed;
     }
 
     // Update is called once per frame
@@ -44,7 +53,10 @@ public class ColisionDetectionTest : MonoBehaviour
             } else 
             {
                 // first stop the movement speed of the player 
+                //jr_PlayerMove.speed = jr_Fall_Stop_Speed; // set the PlayerMove script speed to zero
                 PlayerMove.speed = jr_Fall_Stop_Speed; // set the PlayerMove script speed to zero
+
+
                 //jr_pm_instance.speed = jr_Fall_Stop_Speed; // set the PlayerMove script speed to zero
                 Debug.Log("PlayerMove: Speed Variable == " + PlayerMove.speed.ToString());
 
