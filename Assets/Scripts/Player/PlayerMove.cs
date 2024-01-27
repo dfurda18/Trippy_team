@@ -1,22 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMove : MonoBehaviour
 {
     /**
      * The player's movement speed
      */
-    public float speed = 3;
+    public float maxSpeed = 30;
+    /**
+     * The acceleration force
+     */
+    public float acceleration = 12;
     /**
      * The player's side speed
      */
     public float sideSpeed = 4;
+    /**
+     * The jump Force
+     */
+    public float jumpSpeed = 14;
+    /**
+     * Whether or not the player is Jumping
+     */
+    public bool isGrounded = true;
+    /**
+     * Whther or not the player has stopped for some reason
+     */
+    public bool stopped = false;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(this.gameObject.transform.forward * Time.deltaTime * speed, Space.World);
+        if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && this.GetComponent<Rigidbody>().velocity.magnitude < this.maxSpeed)
+        {
+            this.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.forward * this.acceleration);
+        }
         
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
@@ -27,12 +48,30 @@ public class PlayerMove : MonoBehaviour
         {
             transform.Translate(Vector3.left * Time.deltaTime * sideSpeed * -1);
         }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            this.Jump();
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            this.StopPlayer();
+        }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            this.ContinueRunning();
+        }
     }
 
+    /**
+     * Turns the player towards a specified direction
+     * @param Direction direction The direction the player will turn to.
+     */
     public void Turn(Direction direction)
     {
         Vector3 newDirection;
-        float angle = 0f;
         switch(direction)
         {
             case Direction.North:
@@ -53,5 +92,45 @@ public class PlayerMove : MonoBehaviour
         }
         this.gameObject.transform.LookAt(this.transform.position + newDirection);
         this.gameObject.transform.forward = newDirection;
+    }
+
+    /**
+     * Makes the player jump
+     */
+    public void Jump()
+    {
+        if (this.isGrounded)
+        {
+            this.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.up * this.jumpSpeed);
+            this.GetComponentInChildren<Animator>().SetTrigger("isJumping");
+            this.isGrounded = false;
+        }
+    }
+
+    /**
+     * Manual Stop Player
+     */
+    public void StopPlayer()
+    {
+        this.GetComponentInChildren<Animator>().SetBool("isRunning", false);
+    }
+
+    /**
+     * Manual Start Player movement
+     */
+    public void ContinueRunning()
+    {
+        this.GetComponentInChildren<Animator>().SetBool("isRunning", true);
+    }
+
+    /**
+     * Detect player's collissions
+     */
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ground"))
+        {
+            this.isGrounded = true;
+        }
     }
 }
