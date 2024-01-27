@@ -15,8 +15,8 @@ public class ColisionDetectionTest : MonoBehaviour
 
     //Access the playermove script to stop the default movement speed 
     //public PlayerMove jr_pm_instance;
-    //private static float jr_pm_Default_Speed;
-    //private static float jr_Fall_Stop_Speed = 0f;
+    private float jr_pm_Default_Speed;
+    private float jr_Fall_Stop_Speed = 0f;
 
 
 
@@ -24,7 +24,7 @@ public class ColisionDetectionTest : MonoBehaviour
     void Start()
     {
         //jr_pm_instance = GetComponent<PlayerMove>();
-        //jr_pm_Default_Speed = jr_pm_instance.speed;
+        jr_pm_Default_Speed = PlayerMove.speed;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -44,18 +44,26 @@ public class ColisionDetectionTest : MonoBehaviour
             } else 
             {
                 // first stop the movement speed of the player 
+                PlayerMove.speed = jr_Fall_Stop_Speed; // set the PlayerMove script speed to zero
                 //jr_pm_instance.speed = jr_Fall_Stop_Speed; // set the PlayerMove script speed to zero
-
+                Debug.Log("PlayerMove: Speed Variable == " + PlayerMove.speed.ToString());
 
                 // Run the Stumble Animation 
                 FastRunAnimationTrigger.Invoke();//trigger the trigger in the animation 
                 Debug.Log("Colision fall triggered");
 
-
-                // after animation is done start moving again with the saved default speed 
-                //jr_pm_instance.speed = jr_pm_Default_Speed;
+                // delay the reset of the speed variable 
+                Invoke("ResetPlayerMoveSpeedToDefault", 2.0f);
 
             }//end if else 
         }//end outer if 
+
     }//end on collision enter
+
+    private void ResetPlayerMoveSpeedToDefault()
+    {
+        // after animation is done start moving again with the saved default speed 
+        PlayerMove.speed = jr_pm_Default_Speed;
+        //jr_pm_instance.speed = jr_pm_Default_Speed;
+    }// end player speed reset method 
 }
