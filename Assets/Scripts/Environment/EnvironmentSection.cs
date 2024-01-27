@@ -21,9 +21,9 @@ public class EnvironmentSection: MonoBehaviour
     /**
      * returns the next position from this section to a given direction
      */
-    public Vector3 getNextPosition(Direction nextDirection, int size)
+    public Vector3 GetNextPosition(Direction nextDirection, int size)
     {
-        Vector3 nextPosition = this.position;
+        Vector3 nextPosition = this.gameObject.transform.position;
         nextPosition.x += (nextDirection == Direction.West) ? -size : ((nextDirection == Direction.East) ? size : 0);
         nextPosition.z += (nextDirection == Direction.South) ? -size : ((nextDirection == Direction.North) ? size : 0);
         return nextPosition;
@@ -32,7 +32,7 @@ public class EnvironmentSection: MonoBehaviour
     /**
      * Returns the next directions of this section
      */
-    public List<Direction> getNextDirections()
+    public List<Direction> GetNextDirections()
     {
         List<Direction> nextDirections = new List<Direction>();
         if(this.type != SectionType.Left
@@ -46,14 +46,14 @@ public class EnvironmentSection: MonoBehaviour
             && this.type != SectionType.Right
             && this.type != SectionType.StraightRight)
         {
-            nextDirections.Add(this.getLeft());
+            nextDirections.Add(this.GetLeft());
         }
 
         if (this.type != SectionType.Straight
             && this.type != SectionType.Left
             && this.type != SectionType.StraightLeft)
         {
-            nextDirections.Add(this.getRight());
+            nextDirections.Add(this.GetRight());
         }
 
         return nextDirections;
@@ -62,7 +62,7 @@ public class EnvironmentSection: MonoBehaviour
     /**
      * Returns the left direction
      */
-    public Direction getLeft()
+    public Direction GetLeft()
     {
         switch(this.direction)
         {
@@ -77,7 +77,7 @@ public class EnvironmentSection: MonoBehaviour
     /**
      * Returns the right direction
      */
-    public Direction getRight()
+    public Direction GetRight()
     {
         switch (this.direction)
         {

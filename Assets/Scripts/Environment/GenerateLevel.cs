@@ -13,43 +13,44 @@ public class GenerateLevel : MonoBehaviour
      */
     private static Array sectionTypes = Enum.GetValues(typeof(SectionType));
     /**
-     * The section prefab
+     * The section prefabs
      */
-    public GameObject sectionPrefab;
-    /**
-     * The current z position
-     */
-    public int zPos = 0;
-    /**
-     * The current x position
-     */
-    public int xPos = 0;
+    public GameObject[] sections;
     /**
      * The section size
      */
-    public int sectionSize = 50;
+    public int sectionSize = 60;
     /**
      * Value that says if the level is creating a section
      */
-    private bool creatingSection = false;
+    private static bool creatingSection = false;
     /**
      * The map's current position
      */
-    private Vector3 currentPosition;
+    private static Vector3 currentPosition;
+    /**
+     * The map's previous position
+     */
+    private static Vector3 previousPosition = new Vector3(-1,-1,-1);
     /**
      * the map
      */
-    private Dictionary<Vector3, GameObject> map;
+    private static Dictionary<Vector3, GameObject> map;
+    /**
+     * The Object instance
+     */
+    private static GenerateLevel instance;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.map = new Dictionary<Vector3, GameObject>();
-        this.currentPosition = new Vector3(0, 0, 0);
-        this.map.Add(this.currentPosition, Instantiate(sectionPrefab, this.currentPosition, Quaternion.Euler(0, 0, 0)));
-        if (!creatingSection)
+        GenerateLevel.instance = this;
+        GenerateLevel.map = new Dictionary<Vector3, GameObject>();
+        GenerateLevel.currentPosition = new Vector3(0, 0, 0);
+        GenerateLevel.map.Add(GenerateLevel.currentPosition, Instantiate(GenerateLevel.instance.sections[0], GenerateLevel.currentPosition, Quaternion.Euler(0, 0, 0)));
+        if (!GenerateLevel.creatingSection)
         {
-            creatingSection = true;
+            GenerateLevel.creatingSection = true;
             StartCoroutine(GenerateSection());
         }
     }
@@ -62,35 +63,75 @@ public class GenerateLevel : MonoBehaviour
     /**
      * This corutine generates a new section
      */
-    IEnumerator GenerateSection ()
+    static IEnumerator GenerateSection ()
     {
-        this.spawnNextSections();
+        GenerateLevel.SpawnNextSections();
+        GenerateLevel.DeletePreviousSections();
 
         yield return new WaitForSeconds(2);
         creatingSection = false;
     }
 
     /**
+     * Deletes the unused sections
+     */
+    public static void DeletePreviousSections()
+    {
+        if(GenerateLevel.map.ContainsKey(GenerateLevel.previousPosition))
+        {
+            EnvironmentSection previousSectionScript = GenerateLevel.map[GenerateLevel.previousPosition].GetComponent<EnvironmentSection>();
+            Vector3 nexPosition;
+            foreach (Direction direction in previousSectionScript.GetNextDirections())
+            {
+                nexPosition = previousSectionScript.GetNextPosition(direction, GenerateLevel.instance.sectionSize);
+                if (nexPosition != GenerateLevel.currentPosition)
+                {
+                    Destroy(GenerateLevel.map[nexPosition]);
+                    GenerateLevel.map.Remove(nexPosition);
+                }
+            }
+            Destroy(GenerateLevel.map[GenerateLevel.previousPosition]);
+            GenerateLevel.map.Remove(GenerateLevel.previousPosition);
+        }
+    }
+
+    /**
      * Returns the array of next sections to create from the current section
      */
-    public void spawnNextSections()
+    public static void SpawnNextSections()
     {
-        EnvironmentSection currentSectionScript = this.map[this.currentPosition].GetComponent<EnvironmentSection>();
+        EnvironmentSection currentSectionScript = GenerateLevel.map[GenerateLevel.currentPosition].GetComponent<EnvironmentSection>();
         GameObject tempSection;
-        foreach (Direction newDirection in currentSectionScript.getNextDirections())
+        SectionType newType;
+        foreach (Direction newDirection in currentSectionScript.GetNextDirections())
         {
-            tempSection = Instantiate(sectionPrefab, currentSectionScript.getNextPosition(newDirection, this.sectionSize), Quaternion.Euler(0, (int)newDirection, 0));
-            tempSection.GetComponent<EnvironmentSection>().type = GenerateLevel.getRandomSectionType();
+            newType = GenerateLevel.GetRandomSectionType();
+            tempSection = Instantiate(GenerateLevel.instance.sections[(int)newType], currentSectionScript.GetNextPosition(newDirection, GenerateLevel.instance.sectionSize), Quaternion.Euler(0, (int)newDirection, 0));
+            tempSection.GetComponent<EnvironmentSection>().type = newType;
             tempSection.GetComponent<EnvironmentSection>().direction = newDirection;
-            map.Add(currentSectionScript.getNextPosition(newDirection, this.sectionSize), tempSection);
+            map.Add(currentSectionScript.GetNextPosition(newDirection, GenerateLevel.instance.sectionSize), tempSection);
         }
     }
 
     /**
      * Returns a random section type
      */
-    public static SectionType getRandomSectionType()
+    public static SectionType GetRandomSectionType()
     {
         return (SectionType)GenerateLevel.sectionTypes.GetValue(UnityEngine.Random.Range(0, GenerateLevel.sectionTypes.Length));
+    }
+
+    /**
+     * Leads the current section's next sections
+     */
+    public static void MakeMoreSectionsFrom(Vector3 currentPosition)
+    {
+        GenerateLevel.previousPosition = GenerateLevel.currentPosition;
+        GenerateLevel.currentPosition = currentPosition;
+        if (!GenerateLevel.creatingSection)
+        {
+            GenerateLevel.creatingSection = true;
+            GenerateLevel.instance.StartCoroutine(GenerateLevel.GenerateSection());
+        }
     }
 }
