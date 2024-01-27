@@ -1,3 +1,3 @@
 rep "Trippy_team@dfurda18@cloud"
   path "/"
-    smartbranch "/main/CoreGameplay"    
+    smartbranch "/main"   
