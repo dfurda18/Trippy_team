@@ -40,17 +40,21 @@ public class ColisionDetectionTest : MonoBehaviour
                 NavController.GetPlayer().StopPlayer();
 
                 // Run the Stumble Animation 
-                FastRunAnimationTrigger.Invoke();//trigger the trigger in the animation 
+                //FastRunAnimationTrigger.Invoke();//trigger the trigger in the animation 
+                collision.collider.GetComponentInChildren<Animator>().SetTrigger("CollisionTrigger");
                 Debug.Log("Colision fall triggered");
+
+                Invoke("ResetPlayerMoveSpeedToDefault", 2.9f);
 
             }//end if else 
         }//end outer if 
 
     }//end on collision enter
-
-    private void ResetPlayerMoveSpeedToDefault()
+    
+    public void ResetPlayerMoveSpeedToDefault()
     {
         // after animation is done start moving again with the saved default speed 
         NavController.GetPlayer().ContinueRunning();
     }// end player speed reset method 
+    
 }
