@@ -13,6 +13,7 @@ public class SectionEntrance : MonoBehaviour
     {
         if (!hasCollided && other.CompareTag("Player"))
         {
+            hasCollided = true;
             GenerateLevel.MakeMoreSectionsFrom(this.gameObject.transform.parent.transform.position);
         }
     }
