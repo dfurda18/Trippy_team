@@ -365,8 +365,8 @@ MonoBehaviour:
   maxSpeed: 40
   acceleration: 20
   sideSpeed: 10
-  jumpSpeed: 2
-  isGrounded: 0
+  jumpSpeed: 200
+  isGrounded: 1
   stopped: 0
 --- !u!54 &601910935
 Rigidbody:
