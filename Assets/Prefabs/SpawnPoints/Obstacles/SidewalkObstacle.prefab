@@ -102,7 +102,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -119,6 +119,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 6239766253273970381, guid: cc925accf57087541838b4027ce2b606, type: 3}
-  - {fileID: 6132966100854142869, guid: 460c7a38acfb03040b6e87c13f56032e, type: 3}
-  likelihood: 20
+  - {fileID: 121478, guid: 87c2df8e665f8664e932718fcf85c0b2, type: 3}
+  - {fileID: 190556, guid: 33b36afb51822b442b3a3f8accf3c199, type: 3}
+  - {fileID: 118212, guid: 400c967e5d1329c4c9dd5bc47e49d545, type: 3}
+  - {fileID: 121442, guid: 17fd2c85588a1954eb295a34c9775577, type: 3}
+  - {fileID: 148214, guid: 03ade969ba0f5d842a49161d00145831, type: 3}
+  - {fileID: 149540, guid: 7a686972998735e4e8e9cedda7f0bc43, type: 3}
+  - {fileID: 103300, guid: 70a4fe26c99cdd645b53ab796679e200, type: 3}
+  - {fileID: 122224, guid: 008c6febfb8d88a4496fe51f2a2d409a, type: 3}
+  likelihood: 60

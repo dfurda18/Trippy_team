@@ -1,23 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Environment;
+using UnityEngine;
 
 namespace UI
 {
     public class MenuManager : MonoBehaviour
     {
-        public void PlayButton() // need to add ~1 sec delay because the sound of UnClicking getting cut
+        public void PlayButton()
         {
-            SceneManager.LoadSceneAsync(sceneBuildIndex: 1);
+            Time.timeScale = 1f;
+            SceneManager.LoadSceneAsync(1);
+            BetterAudioManager.Instance.PlayMusic("ChaseTheme");
+            BetterAudioManager.Instance.PlaySFX("WindAmbient");
         }
 
-        public void SettingsButton() // yet in progress
+        public void BackToMainMenuButton()
         {
-            
+            Time.timeScale = 1f;
+            SceneManager.LoadSceneAsync(0);
+            Destroy(BetterAudioManager.Instance.gameObject);
+            BetterAudioManager.Instance.PlayMusic("MainMenuTheme");
         }
 
-        public void ExitButton() // need to check on the build itself
+        public void ExitButton()
         {
             Application.Quit();
             Debug.Log("Quitting the game");
