@@ -40,7 +40,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dog.currentDistanceFromPlayer = currentDistance;
+        
 
         if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && this.GetComponent<Rigidbody>().velocity.magnitude < this.maxSpeed)
         {
@@ -49,7 +49,8 @@ public class PlayerMove : MonoBehaviour
 
             //After collision the dog gets closer 
             //if (our distance meeter count is less than 5 move dog closer to the player else stays away
-            currentDistance = Mathf.MoveTowards(currentDistance, 5f, Time.deltaTime * 0.01f);
+            //currentDistance = Mathf.MoveTowards(currentDistance, 5f, Time.deltaTime * 0.01f);
+            
             //add the dogs movement
             dog.Follow(this.gameObject.transform.forward, this.transform.position, this.acceleration);
         }

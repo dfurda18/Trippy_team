@@ -19,6 +19,11 @@ public class ColisionDetectionTest : MonoBehaviour
     private BoxCollider bc;
     private SphereCollider sc;
 
+    /**
+    * The script on the dog thats chasing the player
+    */
+    public FollowPlayer dog;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +51,10 @@ public class ColisionDetectionTest : MonoBehaviour
                 // Run the Stumble Animation 
                 //FastRunAnimationTrigger.Invoke();//trigger the trigger in the animation 
                 collision.collider.GetComponentInChildren<Animator>().SetTrigger("CollisionTrigger");
+
+                //run the animation 
+                //dog.StumbleBack();
+               
                 Debug.Log("Colision fall triggered");
 
                 Invoke("ResetPlayerMoveSpeedToDefault", 2.8f); 
