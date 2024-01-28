@@ -1870,25 +1870,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601910929}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &601910934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601910929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa1940b4fb2b2624b834411945c7f3fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 40
-  acceleration: 20
-  sideSpeed: 10
-  jumpSpeed: 200
-  isGrounded: 1
-  gameStart: 0
-  dog: {fileID: 1930078779}
 --- !u!54 &601910935
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5906,8 +5887,6 @@ SceneRoots:
   - {fileID: 849328084}
   - {fileID: 2128628098}
   - {fileID: 183345258}
-  - {fileID: 257013950}
-  - {fileID: 268535168}
   - {fileID: 279977240}
   - {fileID: 395400771}
   - {fileID: 420145708}

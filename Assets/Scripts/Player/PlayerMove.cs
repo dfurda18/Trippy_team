@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class PlayerMove : MonoBehaviour
 {
