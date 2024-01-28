@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI distanceCounterText;
     private PlayerMove player;
 
-    public int dogDistanceCount = 0;// default distance of the dog of screen
+    public int dogDistanceCount = 5;// default distance of the dog of screen
     
     //get the player^^^ and the dog game objects 
     private FollowPlayer dog;
@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
 
             // Increase the variable by 1 every second,but not beyond 30
-            if (player.GetComponentInChildren<Animator>().GetBool("isRunning") && dogDistanceCount < 30)
+            if (player.GetComponentInChildren<Animator>().GetBool("isRunning") && dogDistanceCount < 15)
             {
                 dogDistanceCount++;
             }
@@ -91,14 +91,19 @@ public class GameManager : MonoBehaviour
             /**
              * run the dog ending attack animation if the player is not running AND the game has started AND the dog is within 5m
              */
-            if(!player.GetComponentInChildren<Animator>().GetBool("isRunning") && dogDistanceCount <= 5)
+            if(!player.GetComponentInChildren<Animator>().GetBool("isRunning") && dogDistanceCount < 5)
             {
                 if (player.gameStart)
                 {
+                    dog.GetComponentInChildren<MeshRenderer>().enabled = false;
+                    //runs animation 
                     dog.GetComponent<Animator>().SetBool("dogIsClose", true);
                 }
-            }else
+                dog.GetComponentInChildren<MeshRenderer>().enabled = true;
+            }
+            else
             {
+                dog.GetComponentInChildren<MeshRenderer>().enabled = false;
                 dog.GetComponent<Animator>().SetBool("dogIsClose", false);
             }
 
