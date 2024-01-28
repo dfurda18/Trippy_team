@@ -1016,8 +1016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f52c1110d4861e48baaaab5f2974b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _musicSlider: {fileID: 0}
-  _sfxSlider: {fileID: 0}
+  _musicSlider: {fileID: 824219888}
+  _sfxSlider: {fileID: 395400772}
 --- !u!1 &366388872 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d6e2fe72052cdd04c9bc4bd76e578eb0, type: 3}
@@ -4628,6 +4628,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a3db39f09cd51f844ad04efb855dd7f3, type: 3}
       propertyPath: m_Name
       value: BoxDog
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a3db39f09cd51f844ad04efb855dd7f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

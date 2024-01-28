@@ -8,16 +8,13 @@ public class FollowPlayer : MonoBehaviour
     public Transform Dog;
     public float currentDistanceFromPlayer;
 
-    public void Jump () 
-    {
-        StartCoroutine(PlayAnim("Dog_Jump"));
-    }
+   
 
     public void StumbleBack()
     {
         //if (our distance meeter count is less than 5 move dog closer to the player else stays away
 
-            StopAllCoroutines();
+            //StopAllCoroutines();
             //dog goes in for the... 
             StartCoroutine(PlayAnim("Dog_RunFast"));
             
