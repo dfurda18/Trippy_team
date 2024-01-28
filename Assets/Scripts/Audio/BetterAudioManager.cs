@@ -5,36 +5,32 @@ namespace Audio
 {
     public class BetterAudioManager : MonoBehaviour
     {
-        public Sound[] sfxSound;
+        public Sound[] musicSound, sfxSound;
         public AudioSource musicSource, sfxSource;
 
-        [SerializeField] private AudioClip menuMusic;
-        [SerializeField] private AudioClip levelMusic;
-        //[SerializeField] private AudioSource source;
-
-        public static BetterAudioManager instance;
+        public static BetterAudioManager Instance;
 
         private void Awake()
         {
-            if (instance == null)
+            if (Instance == null)
             {
-                instance = this;
-                DontDestroyOnLoad(this);
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
             }
             else
             {
-                Destroy(this);
+                Destroy(gameObject);
             }
         }
 
         private void Start()
         {
-            PlayMenuMusic();
+            Instance.PlayMusic("MainMenuTheme");
         }
 
-        public void PlaySFX(string soundName)
+        public void PlaySFX(string sfxName)
         {
-            var sound = Array.Find(sfxSound, x => x.name == name);
+            var sound = Array.Find(sfxSound, x => x.name == sfxName);
 
             if (sound == null)
                 Debug.Log("Sound Not Found");
@@ -42,32 +38,18 @@ namespace Audio
                 sfxSource.PlayOneShot(sound.clip);
         }
 
-
-        public static void PlayMenuMusic()
+        public void PlayMusic(string musicName)
         {
-            if (instance.musicSource != null)
+            var sound = Array.Find(musicSound, x => x.name == musicName);
+
+            if (sound == null)
             {
-                instance.musicSource.Stop();
-                instance.musicSource.clip = instance.menuMusic;
-                instance.musicSource.Play();
+                Debug.Log("Sound Not Found");
             }
             else
             {
-                Debug.LogError("Unavailable MusicPlayer component");
-            }
-        }
-
-        public static void PlayGameMusic()
-        {
-            if (instance.musicSource != null)
-            {
-                instance.musicSource.Stop();
-                instance.musicSource.clip = instance.levelMusic;
-                instance.musicSource.Play();
-            }
-            else
-            {
-                Debug.LogError("Unavailable MusicPlayer component");
+                musicSource.clip = sound.clip;
+                musicSource.Play();
             }
         }
 
@@ -75,7 +57,7 @@ namespace Audio
         {
             musicSource.volume = volume;
         }
-        
+
         public void SFXVolume(float volume)
         {
             sfxSource.volume = volume;

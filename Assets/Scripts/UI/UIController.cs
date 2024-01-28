@@ -6,16 +6,16 @@ namespace UI
 {
     public class UIController : MonoBehaviour
     {
-        [SerializeField] private Slider _musicSlider;
+        [SerializeField] private Slider _musicSlider, _sfxSlider;
 
         public void MusicVolume()
         {
-            BetterAudioManager.instance.MusicVolume(_musicSlider.value);
+            BetterAudioManager.Instance.MusicVolume(_musicSlider.value);
         }
         
         public void SFXVolume()
         {
-            BetterAudioManager.instance.SFXVolume(_musicSlider.value);
+            BetterAudioManager.Instance.SFXVolume(_sfxSlider.value);
         }
     }
 }

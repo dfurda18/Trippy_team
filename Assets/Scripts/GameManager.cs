@@ -11,25 +11,27 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        player = FindObjectOfType<PlayerMove>();
+        player = FindObjectOfType<PlayerMove>().GetComponent<PlayerMove>();
     }
 
     public void Resume()
     {
-        Cursor.visible = false;
+        Cursor.visible = false; // makes the mouse insivible when playing
         Cursor.lockState = CursorLockMode.Locked;
+        
         _pauseMenuUI.SetActive(false);
-        player.GetComponent<PlayerMove>().enabled = true;
+        player.enabled = true;
         Time.timeScale = 1f;
         _isGamePaused = false;
     }
 
     private void Pause()
     {
+        Cursor.visible = true; // makes the mouse visible when press escape
         Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+
         _pauseMenuUI.SetActive(true);
-        player.GetComponent<PlayerMove>().enabled = false;
+        player.enabled = false;
         Time.timeScale = 0f;
         _isGamePaused = true;
     }

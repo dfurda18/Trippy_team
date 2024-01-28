@@ -5,104 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a01accc0-a16d-4ffe-8d47-5970f872a969" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/GamePlay.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/GamePlay/Character.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/GamePlay/Character/SFX_Footstep_Stone_1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/GamePlay/Character/SFX_Footstep_Stone_1.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/GamePlay/Character/SFX_Footstep_Stone_2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/GamePlay/Character/SFX_Footstep_Stone_2.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/GamePlay/Character/SFX_Jump_Generic.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/GamePlay/Character/SFX_Jump_Generic.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/GamePlay/Environment.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/GamePlay/Environment/AMB_Wind_Loop.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/GamePlay/Environment/AMB_Wind_Loop.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/MainMenu.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/MainMenu/ButtonClick.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/MainMenu/ButtonClick/ButtonSound.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/MainMenu/ButtonClick/ButtonSound.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/MainMenu/ButtonClick/PressSound.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/MainMenu/ButtonClick/PressSound.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/MainMenu/ButtonClick/UnPressSound.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/MainMenu/ButtonClick/UnPressSound.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/MainMenu/CountDown.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/MainMenu/CountDown.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/Themes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/Themes/AltChaseTheme.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/Themes/AltChaseTheme.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/Themes/GameTheme.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/Themes/GameTheme.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/Themes/MainMenuTheme.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Audio/Themes/MainMenuTheme.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Charaters/BoxDog.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Charaters/BoxDog.obj.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/BetterAudioManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/BetterAudioManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/ButtonClick.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/ButtonClick.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/FpsLock.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/FpsLock.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/Scroller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenu/Scroller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SwitchScenes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SwitchScenes.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pixellari.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Pixellari.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/Pixellari SDF.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/Pixellari SDF.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/14964600942863_00001_.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/14964600942863_00001_.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/ExitMainMenuButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/ExitMainMenuButton.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/ExitMainMenuButtonPressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/ExitMainMenuButtonPressed.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/ResumeButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/ResumeButton.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/ResumeButtonPressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/ResumeButtonPressed.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/SliderFill.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/SliderFill.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/Sliderv1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/Sliderv1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/UI/dog.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Trippy_team/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Trippy_team/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.plastic/plastic.lck.operation" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/PressSound.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/PressSound.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UnPressSound.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UnPressSound.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoxDog.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BoxDog.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DanielKotik_BGFHD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DanielKotik_BGFHD.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/UI/dog.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Environment/GenerateLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Environment/GenerateLevel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Environment/SectionEntrance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Environment/SectionEntrance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonClick.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonClick.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/FpsLock.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/FpsLock.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/BetterAudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/BetterAudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collision/ColisionDetectionTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Collision/ColisionDetectionTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/Pixeled SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/Pixeled SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/DefaultButton.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/UI/DefaultButton.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/PlayButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/UI/PlayButton.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/PlayButton.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/UI/PlayButton.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/PlayButtonPressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/UI/PlayButtonPressed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/UI/PlayButtonPressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/UI/PlayButtonPressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,28 +44,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "DanielKotikMenuV2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Daniel\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Daniel\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Daniel\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Daniel\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Daniel\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Daniel\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="E:\Hub\Editor\2022.3.18f1\Editor\Unity.exe" />
@@ -208,6 +120,7 @@
       <workItem from="1706397583380" duration="1198000" />
       <workItem from="1706418985675" duration="14871000" />
       <workItem from="1706439571561" duration="3085000" />
+      <workItem from="1706446021343" duration="4617000" />
     </task>
     <servers />
   </component>
