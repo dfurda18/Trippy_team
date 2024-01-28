@@ -31,13 +31,31 @@ public class PlayerMove : MonoBehaviour
      */
     public bool stopped = false;
 
+    /**
+    * The script on the dog thats chasing the player
+    */
+    public FollowPlayer dog;
+    private float currentDistance = 0.6f; // this is the minimum follow distance 
+
     // Update is called once per frame
     void Update()
     {
+        dog.currentDistanceFromPlayer = currentDistance;
+
         if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && this.GetComponent<Rigidbody>().velocity.magnitude < this.maxSpeed)
         {
             this.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.forward * this.acceleration);
+
+
+            //After collision the dog gets closer 
+            //if (our distance meeter count is less than 5 move dog closer to the player else stays away
+            currentDistance = Mathf.MoveTowards(currentDistance, 5f, Time.deltaTime * 0.01f);
+            //add the dogs movement
+            dog.Follow(this.gameObject.transform.forward, this.transform.position, this.acceleration);
         }
+        /**
+         * Add an else where the dog catches up to the player??
+         */
         
         if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {

@@ -368,6 +368,7 @@ MonoBehaviour:
   jumpSpeed: 200
   isGrounded: 1
   stopped: 0
+  dog: {fileID: 1373208208}
 --- !u!54 &601910935
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1056,7 +1057,10 @@ PrefabInstance:
       addedObject: {fileID: 1373208205}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a3db39f09cd51f844ad04efb855dd7f3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1373208206}
+      addedObject: {fileID: 1373208208}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a3db39f09cd51f844ad04efb855dd7f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1373208209}
   m_SourcePrefab: {fileID: 100100000, guid: a3db39f09cd51f844ad04efb855dd7f3, type: 3}
 --- !u!1 &1373208204 stripped
 GameObject:
@@ -1080,38 +1084,51 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1.2578661, z: 1.492506}
   m_Center: {x: 0, y: -0.12893331, z: 0.6748781}
---- !u!114 &1373208206
+--- !u!4 &1373208207 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a3db39f09cd51f844ad04efb855dd7f3, type: 3}
+  m_PrefabInstance: {fileID: 1373208203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1373208208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373208204}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6f11f9d44b43ca4789b3d168bff4363, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a5fcea4d8d746740a6e68fed5727126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  player: {fileID: 0}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 0
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 0
-  health: 0
-  walkpoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 0
-  timeBetweenAttacks: 0
-  sightRange: 0
-  attackRange: 0
-  playerInSightRange: 0
-  playerInAttackRange: 0
+  dogAnimator: {fileID: 0}
+  Dog: {fileID: 1373208207}
+  currentDistanceFromPlayer: 5
+--- !u!95 &1373208209
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373208204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa689b25293b44649b4c79da5b02efbf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1657597740
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,16 +8,32 @@ public class FollowPlayer : MonoBehaviour
     public Transform Dog;
     public float currentDistanceFromPlayer;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Jump () 
     {
-        
+        StartCoroutine(PlayAnim("Dog_Jump"));
+    }
+
+    public void StumbleBack()
+    {
+        //if (our distance meeter count is less than 5 move dog closer to the player else stays away
+
+            StopAllCoroutines();
+            //dog goes in for the... 
+            StartCoroutine(PlayAnim("Dog_RunFast"));
+            
+    }
+
+    private IEnumerator PlayAnim(string anim)
+    {
+        yield return new WaitForSeconds(currentDistanceFromPlayer / 5f);
+        dogAnimator.Play(anim);
     }
 
     // Update is called once per frame
-    void Follow(Vector3 pos, float playerSpeed)
+    public void Follow(Vector3 forward, Vector3 pos, float playerSpeed)
     {
-        Vector3 position = pos - Vector3.forward * currentDistanceFromPlayer;
+        Vector3 position = pos - forward * currentDistanceFromPlayer;
+        this.gameObject.transform.LookAt(position + forward);
         Dog.position = Vector3.Lerp(Dog.position, position, Time.deltaTime * playerSpeed / currentDistanceFromPlayer);
     }
 }
