@@ -29,7 +29,7 @@ public class PlayerMove : MonoBehaviour
     /**
      * Whther or not the player has stopped for some reason
      */
-    public bool stopped = false;
+    public bool gameStart = false;
 
     /**
     * The script on the dog thats chasing the player
@@ -78,8 +78,9 @@ public class PlayerMove : MonoBehaviour
             this.StopPlayer();
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.RightArrow))
         {
+            this.gameStart = true;
             this.ContinueRunning();
         }
     }
