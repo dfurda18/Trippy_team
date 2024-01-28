@@ -29,22 +29,41 @@ public class PlayerMove : MonoBehaviour
     /**
      * Whther or not the player has stopped for some reason
      */
-    public bool stopped = false;
+    public bool gameStart = false;
+
+    /**
+    * The script on the dog thats chasing the player
+    */
+    public FollowPlayer dog;
+    private float currentDistance = 0.6f; // this is the minimum follow distance 
 
     // Update is called once per frame
     void Update()
     {
+        
+
         if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && this.GetComponent<Rigidbody>().velocity.magnitude < this.maxSpeed)
         {
             this.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.forward * this.acceleration);
+
+
+            //After collision the dog gets closer 
+            //if (our distance meeter count is less than 5 move dog closer to the player else stays away
+            //currentDistance = Mathf.MoveTowards(currentDistance, 5f, Time.deltaTime * 0.01f);
+            
+            //add the dogs movement
+            dog.Follow(this.gameObject.transform.forward, this.transform.position, this.acceleration);
         }
+        /**
+         * Add an else where the dog catches up to the player??
+         */
         
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector3.left * Time.deltaTime * sideSpeed);
         }
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(Vector3.left * Time.deltaTime * sideSpeed * -1);
         }
@@ -59,8 +78,9 @@ public class PlayerMove : MonoBehaviour
             this.StopPlayer();
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.RightArrow))
         {
+            this.gameStart = true;
             this.ContinueRunning();
         }
     }
@@ -99,7 +119,7 @@ public class PlayerMove : MonoBehaviour
      */
     public void Jump()
     {
-        if (this.isGrounded)
+        if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && this.isGrounded)
         {
             this.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.up * this.jumpSpeed);
             this.GetComponentInChildren<Animator>().SetTrigger("isJumping");
@@ -133,4 +153,22 @@ public class PlayerMove : MonoBehaviour
             this.isGrounded = true;
         }
     }
+
+     /**
+     * Make the player invincible!!!
+     * by getting its colliders and siabling them for 3 seconds
+     */
+    public void EnableInvincibility()
+    {
+        //this.GetComponent<BoxCollider>().excludeLayers("");
+        //this.GetComponent<BoxCollider>().excludeLayers;
+        //this.GetComponent<SphereCollider>().enabled = false;
+    }
+
+    public void DisableInvincibility()
+    {
+        this.GetComponent<BoxCollider>().enabled = false;
+        //this.GetComponent<SphereCollider>().enabled = false;
+    }
+
 }
