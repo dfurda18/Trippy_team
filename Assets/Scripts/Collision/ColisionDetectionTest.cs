@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,11 +24,13 @@ public class ColisionDetectionTest : MonoBehaviour
     * The script on the dog thats chasing the player
     */
     public FollowPlayer dog;
+    //private BetterAudioManager _audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
         bc = this.GetComponent<BoxCollider>();
+        //_audioManager = GameObject.Find("SFX_Jump_Generic").GetComponent<BetterAudioManager>();
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class ColisionDetectionTest : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == colisionTag)
+        if (collision.collider.CompareTag(colisionTag))
         {
             if (FastRunAnimationTrigger == null)
             {
@@ -56,6 +59,7 @@ public class ColisionDetectionTest : MonoBehaviour
                 //dog.StumbleBack();
                
                 Debug.Log("Colision fall triggered");
+                BetterAudioManager.Instance.PlaySFX("Jump");
 
                 Invoke("ResetPlayerMoveSpeedToDefault", 2.8f); 
 
