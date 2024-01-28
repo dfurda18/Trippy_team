@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2331170}
   - component: {fileID: 65614016601126544}
   - component: {fileID: 4768747562649378118}
+  - component: {fileID: -680911187794343808}
   m_Layer: 0
   m_Name: CardboardBox
   m_TagString: Untagged
@@ -133,3 +134,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-680911187794343808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e879516077598ee4d8961845ba963e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colisionTag: Player
+  FastRunAnimationTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  dog: {fileID: 0}
