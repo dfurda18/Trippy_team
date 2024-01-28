@@ -182,7 +182,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7ba5a5e3a7220d74880f2c486d5ff48d, type: 3}
   ambientSound:
   - name: WindAmbient
-    clip: {fileID: 8300000, guid: c6cff251bd8b56b4a943255f09bb9aa9, type: 3}
+    clip: {fileID: 8300000, guid: b43dd683e026a4d4ba2997cafd124898, type: 3}
   musicSource: {fileID: 1288132554}
   sfxSource: {fileID: 1537043756}
   ambientSource: {fileID: 1459141935}
@@ -2062,9 +2062,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

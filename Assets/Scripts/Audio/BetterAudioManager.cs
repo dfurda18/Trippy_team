@@ -25,90 +25,58 @@ namespace Audio
 
         private void Start()
         {
-            PlayMusic("MainMenuTheme");
+            Instance.PlayMusic("MainMenuTheme");
         }
 
         public void PlaySFX(string sfxName)
         {
-            var sound = FindSoundByName(sfxName, sfxSound);
-            PlaySound(sfxSource, sound);
+            var sound = Array.Find(sfxSound, x => x.name == sfxName);
+
+            if (sound == null)
+                Debug.Log("Sound Not Found");
+            else
+                sfxSource.PlayOneShot(sound.clip);
         }
 
         public void PlayMusic(string musicName)
         {
-            var sound = FindSoundByName(musicName, musicSound);
+            var sound = Array.Find(musicSound, x => x.name == musicName);
 
-            if (sound != null)
+            if (sound == null)
             {
-                PlaySound(musicSource, sound);
-
-                // Schedule the transition to the second music after the first one finishes
-                Invoke(nameof(StartSecondMusic), musicSource.clip.length);
+                Debug.Log("Sound Not Found");
             }
             else
             {
-                Debug.Log("Music Not Found");
+                musicSource.clip = sound.clip;
+                musicSource.Play();
             }
         }
-
-        private void StartSecondMusic()
-        {
-            StopAndPlayMusic("SecondMusicTheme", true);
-        }
-
+        
+        
         public void PlayAmbient(string ambientName)
         {
-            var sound = FindSoundByName(ambientName, ambientSound);
-            PlaySound(ambientSource, sound);
+            var sound = Array.Find(ambientSound, x => x.name == ambientName);
+
+            if (sound == null)
+            {
+                Debug.Log("Sound Not Found");
+            }
+            else
+            {
+                ambientSource.clip = sound.clip;
+                ambientSource.Play();
+            }
         }
 
         public void MusicVolume(float volume)
         {
-            SetVolume(musicSource, volume);
+            musicSource.volume = volume;
         }
 
         public void SFXVolume(float volume)
         {
-            SetVolume(sfxSource, volume);
-        }
-
-        private static void PlaySound(AudioSource audioSource, Sound sound)
-        {
-            if (audioSource != null && sound != null)
-            {
-                audioSource.clip = sound.clip;
-                audioSource.Play();
-            }
-        }
-
-        private void StopAndPlayMusic(string musicName, bool loop)
-        {
-            musicSource.Stop();
-            var sound = FindSoundByName(musicName, musicSound);
-
-            if (sound != null)
-            {
-                musicSource.clip = sound.clip;
-                musicSource.loop = loop;
-                musicSource.Play();
-            }
-            else
-            {
-                Debug.Log("Music Not Found");
-            }
-        }
-
-        private static void SetVolume(AudioSource audioSource, float volume)
-        {
-            if (audioSource != null)
-            {
-                audioSource.volume = volume;
-            }
-        }
-
-        private static Sound FindSoundByName(string soundName, Sound[] soundArray)
-        {
-            return Array.Find(soundArray, x => x.name == soundName);
+            sfxSource.volume = volume;
         }
     }
 }

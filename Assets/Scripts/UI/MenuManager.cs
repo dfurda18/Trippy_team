@@ -24,7 +24,7 @@ namespace UI
             Time.timeScale = 1f;
             SceneManager.LoadSceneAsync(0);
             Destroy(BetterAudioManager.Instance.gameObject);
-            BetterAudioManager.Instance.PlayMusic("SecondMusicTheme");
+            BetterAudioManager.Instance.PlayMusic("MainMenuTheme");
         }
 
         public void ExitButton()
