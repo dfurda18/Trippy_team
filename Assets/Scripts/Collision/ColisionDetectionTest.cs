@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,10 +16,12 @@ public class ColisionDetectionTest : MonoBehaviour
     //Access the playermove script to stop the default movement speed 
     private bool stopPlayer = false;
 
+    //private BetterAudioManager _audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        //_audioManager = GameObject.Find("SFX_Jump_Generic").GetComponent<BetterAudioManager>();
     }
 
     // Update is called once per frame
@@ -29,7 +32,7 @@ public class ColisionDetectionTest : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == colisionTag)
+        if (collision.collider.CompareTag(colisionTag))
         {
             if (FastRunAnimationTrigger == null)
             {
@@ -42,6 +45,7 @@ public class ColisionDetectionTest : MonoBehaviour
                 // Run the Stumble Animation 
                 FastRunAnimationTrigger.Invoke();//trigger the trigger in the animation 
                 Debug.Log("Colision fall triggered");
+                BetterAudioManager.Instance.PlaySFX("Jump");
 
             }//end if else 
         }//end outer if 
