@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
             // Decrease the variable by 1 if the bool is true
             if (!player.GetComponentInChildren<Animator>().GetBool("isRunning"))
             {
-                dogDistanceCount--;
+                dogDistanceCount -= 2;
                 // Ensure the variable doesn't go below 0
                 dogDistanceCount = Mathf.Max(0, dogDistanceCount);
             }
@@ -95,7 +95,6 @@ public class GameManager : MonoBehaviour
             {
                 if (player.gameStart)
                 {
-                    dog.GetComponentInChildren<MeshRenderer>().enabled = false;
                     //runs animation 
                     dog.GetComponent<Animator>().SetBool("dogIsClose", true);
                 }

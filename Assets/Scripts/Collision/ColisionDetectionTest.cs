@@ -17,7 +17,7 @@ namespace Collision
         private bool stopPlayer = false;
 
 
-        private BoxCollider bc;
+        private Collider bc;
         private SphereCollider sc;
 
         /**
@@ -29,7 +29,7 @@ namespace Collision
         // Start is called before the first frame update
         void Start()
         {
-            bc = this.GetComponent<BoxCollider>();
+            bc = this.GetComponent<Collider>();
             //_audioManager = GameObject.Find("SFX_Jump_Generic").GetComponent<BetterAudioManager>();
         }
 
