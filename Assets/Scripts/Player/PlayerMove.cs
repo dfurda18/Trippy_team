@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class PlayerMove : MonoBehaviour
     /**
      * Whether or not the player is Jumping
      */
-    public bool isGrounded = false;
+    public bool isGrounded = true;
     /**
      * Whther or not the player has stopped for some reason
      */
@@ -33,8 +34,6 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //this.GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0)
-        //this.GetComponentInChildren<Animator>().GetAnimator
         if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && this.GetComponent<Rigidbody>().velocity.magnitude < this.maxSpeed)
         {
             this.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.forward * this.acceleration);
@@ -103,6 +102,8 @@ public class PlayerMove : MonoBehaviour
         if (this.isGrounded)
         {
             this.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.up * this.jumpSpeed);
+            this.GetComponentInChildren<Animator>().SetTrigger("isJumping");
+            this.isGrounded = false;
         }
     }
 
@@ -120,5 +121,16 @@ public class PlayerMove : MonoBehaviour
     public void ContinueRunning()
     {
         this.GetComponentInChildren<Animator>().SetBool("isRunning", true);
+    }
+
+    /**
+     * Detect player's collissions
+     */
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ground"))
+        {
+            this.isGrounded = true;
+        }
     }
 }
