@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Audio
 {
     public class BetterAudioManager : MonoBehaviour
     {
-        public Sound[] musicSound, sfxSound, ambientSound;
-        public AudioSource musicSource, sfxSource, ambientSource;
+        [SerializeField] private Sound[] musicSound, sfxSound, ambientSound;
+        [SerializeField] private AudioSource musicSource, sfxSource, ambientSource;
 
         public static BetterAudioManager Instance;
 
@@ -25,7 +26,8 @@ namespace Audio
 
         private void Start()
         {
-            Instance.PlayMusic("MainMenuTheme");
+            var currentScene = SceneManager.GetActiveScene();
+            Instance.PlayMusic(currentScene.buildIndex == 0 ? "MainMenuTheme" : "ChaseTheme");
         }
 
         public void PlaySFX(string sfxName)
