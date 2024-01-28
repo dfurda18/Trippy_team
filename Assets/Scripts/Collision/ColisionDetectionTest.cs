@@ -15,10 +15,14 @@ public class ColisionDetectionTest : MonoBehaviour
     //Access the playermove script to stop the default movement speed 
     private bool stopPlayer = false;
 
+
+    private BoxCollider bc;
+    private SphereCollider sc;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        bc = this.GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -44,7 +48,7 @@ public class ColisionDetectionTest : MonoBehaviour
                 collision.collider.GetComponentInChildren<Animator>().SetTrigger("CollisionTrigger");
                 Debug.Log("Colision fall triggered");
 
-                Invoke("ResetPlayerMoveSpeedToDefault", 2.6f);
+                Invoke("ResetPlayerMoveSpeedToDefault", 2.8f); 
 
             }//end if else 
         }//end outer if 
@@ -55,6 +59,20 @@ public class ColisionDetectionTest : MonoBehaviour
     {
         // after animation is done start moving again with the saved default speed 
         NavController.GetPlayer().ContinueRunning();
+
+        //GetComponent<BoxCollider>().excludeLayers
+        bc.isTrigger = true;
+
+        NavController.GetPlayer().EnableInvincibility();
+        
+        Invoke("DisableInvincibility", 3f);
     }// end player speed reset method 
-    
+
+
+    public void DisableInvincibility()
+    {
+        bc.isTrigger = false;
+        NavController.GetPlayer().EnableInvincibility();
+    }
+
 }

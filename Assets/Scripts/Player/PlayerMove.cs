@@ -39,12 +39,12 @@ public class PlayerMove : MonoBehaviour
             this.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.forward * this.acceleration);
         }
         
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector3.left * Time.deltaTime * sideSpeed);
         }
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (this.GetComponentInChildren<Animator>().GetBool("isRunning") && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(Vector3.left * Time.deltaTime * sideSpeed * -1);
         }
@@ -133,4 +133,22 @@ public class PlayerMove : MonoBehaviour
             this.isGrounded = true;
         }
     }
+
+     /**
+     * Make the player invincible!!!
+     * by getting its colliders and siabling them for 3 seconds
+     */
+    public void EnableInvincibility()
+    {
+        //this.GetComponent<BoxCollider>().excludeLayers("");
+        //this.GetComponent<BoxCollider>().excludeLayers;
+        //this.GetComponent<SphereCollider>().enabled = false;
+    }
+
+    public void DisableInvincibility()
+    {
+        this.GetComponent<BoxCollider>().enabled = false;
+        //this.GetComponent<SphereCollider>().enabled = false;
+    }
+
 }
