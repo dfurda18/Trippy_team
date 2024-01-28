@@ -1083,6 +1083,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnHouse (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.x
+      value: 17.96902
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.y
+      value: 11.15723
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.z
+      value: 20.105263
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.x
+      value: -1.068121
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.y
+      value: 5.078615
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.z
+      value: -0.08061218
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1393,6 +1417,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnHouse (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.x
+      value: 18.089941
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.y
+      value: 10.754165
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.z
+      value: 20.105265
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.x
+      value: 1.0076609
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.y
+      value: 4.8770823
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0000009536743
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1702,6 +1750,30 @@ PrefabInstance:
     - target: {fileID: 7096452798098013111, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
       propertyPath: m_Name
       value: SpawnHouse (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.x
+      value: 17.96902
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.y
+      value: 11.399069
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.z
+      value: 20.064957
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.x
+      value: 1.148735
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.y
+      value: 5.1995344
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.z
+      value: 0.060459137
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2137,6 +2209,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnHouse (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.x
+      value: 18.089941
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.y
+      value: 11.439375
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.z
+      value: 20.02465
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.x
+      value: 1.0479689
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.y
+      value: 5.2196875
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2260,6 +2356,30 @@ PrefabInstance:
     - target: {fileID: 7096452798098013111, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
       propertyPath: m_Name
       value: SpawnHouse (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.x
+      value: 17.86322
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.y
+      value: 11.612199
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.z
+      value: 20.092264
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.x
+      value: -1.1145229
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.y
+      value: 5.3060994
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.z
+      value: 0.19382954
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2880,6 +3000,30 @@ PrefabInstance:
     - target: {fileID: 7096452798098013111, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
       propertyPath: m_Name
       value: SpawnHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.x
+      value: 18.247688
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.y
+      value: 11.515284
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Size.z
+      value: 19.946877
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.x
+      value: -1.0411129
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.y
+      value: 5.257642
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189101925600168922, guid: b7a6ffb10b40dc646bc34370607adf28, type: 3}
+      propertyPath: m_Center.z
+      value: 0.037324905
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
