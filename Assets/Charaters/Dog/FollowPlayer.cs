@@ -14,7 +14,7 @@ public class FollowPlayer : MonoBehaviour
     {
         //if (our distance meeter count is less than 5 move dog closer to the player else stays away
 
-            //StopAllCoroutines();
+            StopAllCoroutines();
             //dog goes in for the... 
             StartCoroutine(PlayAnim("Dog_RunFast"));
             
@@ -23,7 +23,7 @@ public class FollowPlayer : MonoBehaviour
     private IEnumerator PlayAnim(string anim)
     {
         yield return new WaitForSeconds(currentDistanceFromPlayer / 5f);
-        dogAnimator.Play(anim);
+        //dogAnimator.Play(anim);
     }
 
     // Update is called once per frame
