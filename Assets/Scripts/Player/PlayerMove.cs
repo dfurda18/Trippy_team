@@ -78,7 +78,7 @@ public class PlayerMove : MonoBehaviour
             this.StopPlayer();
         }
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.RightArrow))
+        if (!gameStart && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.RightArrow))
         {
             this.gameStart = true;
             this.ContinueRunning();
