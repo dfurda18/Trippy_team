@@ -16,7 +16,7 @@ namespace UI
             Time.timeScale = 1f;
             SceneManager.LoadSceneAsync(1);
             BetterAudioManager.Instance.PlayMusic("ChaseTheme");
-            BetterAudioManager.Instance.PlaySFX("WindAmbient");
+            BetterAudioManager.Instance.PlayAmbient("WindAmbient");
         }
 
         public void BackToMainMenuButton()
