@@ -119,5 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 7244901049202585868, guid: ff4d8f822da78544999b504a0404f53f, type: 3}
-  likelihood: 50
+  - {fileID: 5803415670524407801, guid: 2815ad99023d13d40b1364026852c896, type: 3}
+  likelihood: 0
