@@ -5,8 +5,8 @@ namespace Audio
 {
     public class BetterAudioManager : MonoBehaviour
     {
-        public Sound[] musicSound, sfxSound;
-        public AudioSource musicSource, sfxSource;
+        public Sound[] musicSound, sfxSound, ambientSound;
+        public AudioSource musicSource, sfxSource, ambientSource;
 
         public static BetterAudioManager Instance;
 
@@ -50,6 +50,22 @@ namespace Audio
             {
                 musicSource.clip = sound.clip;
                 musicSource.Play();
+            }
+        }
+        
+        
+        public void PlayAmbient(string ambientName)
+        {
+            var sound = Array.Find(ambientSound, x => x.name == ambientName);
+
+            if (sound == null)
+            {
+                Debug.Log("Sound Not Found");
+            }
+            else
+            {
+                ambientSource.clip = sound.clip;
+                ambientSource.Play();
             }
         }
 
